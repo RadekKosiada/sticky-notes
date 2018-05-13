@@ -1,0 +1,18 @@
+/* * {
+  border: 1px black solid;
+
+} */
+
+.App {
+  margin-top: 20px;
+}
+
+.note {
+  border: 1px #ddd solid;
+  border-radius: 5px;
+}
+
+#addInfo {
+  text-align: center;
+  margin-top: 100px;
+}
