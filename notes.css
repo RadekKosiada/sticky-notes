@@ -1,18 +1,59 @@
-/* * {
-  border: 1px black solid;
+* {
+  /* border: 1px black solid; */
+  font-family: 'Gamja Flower', cursive; 
+  font-size: 2.5vw;
+}
 
+/* body {
+  background-color: burlywood !important;
 } */
+
+/* font-family: 'Hi Melody', cursive;
+font-family: 'Gamja Flower', cursive;
+font-family: 'Gochi Hand', cursive; */
 
 .App {
   margin-top: 20px;
 }
 
 .note {
-  border: 1px #ddd solid;
+  /* border: 1px #ddd solid; */
   border-radius: 5px;
 }
+
+textarea {
+  min-width: 350px;
+  min-height: 50px !important;
+}
+
+input {
+  font-size: 3vw;
+}
+
 
 #addInfo {
   text-align: center;
   margin-top: 100px;
+}
+
+.memo{
+  margin: 20px;
+  background-color: #FFFFA5;
+  -webkit-box-shadow: 7px 9px 5px 3px rgba(130,128,130,0.37);
+  -moz-box-shadow: 7px 9px 5px 3px rgba(130,128,130,0.37);
+  box-shadow: 7px 9px 5px 3px rgba(130,128,130,0.37);
+}
+
+.memo:hover {
+  cursor: pointer;
+}
+
+.delBtn {
+  background-color: #FFFFA5;
+  border: none;
+  text-align: right;
+  font-weight: 600;
+  box-shadow: 1px;
+  transform: none;
+  
 }
