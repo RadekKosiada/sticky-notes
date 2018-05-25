@@ -1,61 +1,47 @@
 
-// triggers addNote function everytime Submit button is clicked
-document.querySelector('#sub-button').addEventListener("click", addNote);
 
-function addNote (){
-  // declaring a variable and what kind of element will be created - div
- let newNote = document.createElement('div');
- let timeStamp = document.createElement('p');
-let button = document.createElement('button');
+let textToAdd;
+// introducing date of adding the note as a key for local storage data
+let inpKey = `${new Date}`;
 
 
-  // declaring a variable and what text will be included in the div
-let textToAdd = document.querySelector('#input').value
-
-  // creating a text node with text typed by user in the input
- let text = document.createTextNode(textToAdd);
-
- let currentTime = new Date();
- let timeToAdd = document.createTextNode(currentTime.toString());
-
- let buttonText =document.createTextNode('Delete');
+ $('#sub-button').on('click', function() {
+  //  textToAdd will equal the input typed in the input textarea
+  textToAdd = $('#input').val();
  
-  // creating a new div with text typed by user
- newNote.appendChild(text);
- 
- timeStamp.appendChild(timeToAdd);
- button.appendChild(buttonText);
-
-//  appending a new note(div) within a div "output"
-  document.querySelector('#output').appendChild(timeStamp);
- document.querySelector('#output').appendChild(newNote);
- document.querySelector('#output').appendChild(button);
-
-//  adding an attribute to elements
-newNote.setAttribute('class', 'note');
-button.setAttribute('class', 'deleteBtn');
-
-
+  $('#output').append(`
+    <div class='memo'>
+      <p class='date'>${new Date}</p>
+      <p class='note'>${textToAdd}</p>
+      <button class='delBtn'>Delete</button></div>`); 
+  $('#input').val('');
+   
+  localStorage.setItem(inpKey, textToAdd);
 
  
- 
-  // assigning an empty string to the input, in order to clear it & enable faster typing of a new note
- document.querySelector('#input').value = '';
-};
+});
 
-document.querySelector('.deleteBtn').addEventListener("click", deleteNote)
+$( window ).on( "load", function() {
 
-function deleteNote () {
-document.querySelector('.note').style='visibility:hidden';
+for (let i=0; i < localStorage.length; i++) {
+  const key = localStorage.key(i);
+  
+  $('#output').append(`
+    <div class='memo'>
+      <p class='date'>${key}</p>
+      <p class='note'>${localStorage.getItem(key)}</p>
+      <button class='delBtn' id='${i}'>Delete</button></div>`);
+      // $('.delBtn').html(`<button class='delBtn' id='${i}'>Delete</button>`)
+  $('#input').val('');
+
+
 }
+});
 
 
 
-// adding timestamp
-// adding delete button
 
-// adding attributes to elements
-// trim time to make it look better
-// adding notes to cache?
 
-// change cursor when hovers
+
+
+
