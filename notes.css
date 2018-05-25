@@ -22,8 +22,13 @@ font-family: 'Gochi Hand', cursive; */
 }
 
 textarea {
-  min-width: 350px;
-  min-height: 50px !important;
+  min-width: 200px;
+  min-height: 180px !important;
+  text-align: center;
+}
+::placeholder {
+  text-align: center;
+  margin-top: 20px !important;
 }
 
 input {
