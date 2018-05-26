@@ -16,12 +16,21 @@
   <body>
 
     <div class="App container">
-      <div class="row" id="note-tool">
+      <h5 id='header'>Sticky Notes</h5>
+
+      <div id="tooltip">learn more</div>
+      <div id="tooltiptext">
+            Type your note in the input area and submit it by pressing 'Enter' or clicking 'Save'.<br>
+            It will be kept in your browser's local storage<br>
+            so you can close this window, turn off your device etc.<br>
+            All notes will stay there until you get rid of them, by clicking 'Delete'.
+      </div>   
+           
         
         <textarea class="container" 
         id="input" 
         placeholder=
-        "Type your note here and submit by pressing 'Enter' or 'Save'.&#10;It will be kept in your browser's local storage&#10;so you can close this window, turn off you device etc.&#10;and your notes will stay here unless you delete them."
+        "Add your note here ..."
         ></textarea>
         <button id="sub-button" type="submit" value="Submit">Save</button>
       </div>
@@ -31,13 +40,17 @@
       </div>
       <p id="demo"></p>
 
+      <div id='cover'></div>
+      <div id='alertMsg'>
+        <h5>Delete this note?</h5>
+        <div class='row'>
+          <p id="yesBtn" class="col-sm-6">Yes</p>
+          <p id="noBtn" class="col-sm-6">No</p>  
+        </div>      
+      </div>
+
     </div>
 
-    <div id='dialog' hidden="hidden">
-      <p>
-      Are you sure you want to delete this note?  
-      </p>
-    </div>
 
     <div id= "addInfo">
       <p>this app is still in progress... </p>
@@ -46,8 +59,6 @@
   
 
 
-
-  
 
   <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
 
