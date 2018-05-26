@@ -38,23 +38,65 @@ $( window ).on( "load", function() {
         // $('.delBtn').html(`<button class='delBtn' id='${i}'>Delete</button>`)
     $('#input').val('');
 
-    $(`#delBtn${i}`).on('click', function(){
 
-      localStorage.removeItem(key, localStorage.getItem(localStorage.key(i)));
-      window.location.reload(); 
+     // triggerring alert popup before deleting a note
+    $(`#delBtn${i}`).on('click', function(){
+      $('#cover').fadeIn('slow');
+      $('#alertMsg').fadeIn('slow');
+
+      // deleting a note when clicked yes
+        $('#yesBtn').on('click', function() {
+          localStorage.removeItem(key, localStorage.getItem(localStorage.key(i)));
+          window.location.reload(); 
+        });
+      // hiding pop up when clicked no
+        $('#noBtn').on('click', function() {
+          $('#cover').fadeOut('slow');
+          $('#alertMsg').fadeOut('slow');
+        });
 
     });  
   };
 });
 
+// Additional info displayed when hover on 'learn more'
+  $('#tooltip').mouseenter( function() {
+    $('#tooltiptext').fadeIn();
+    $('#tooltiptext').fadeIn('slow');
+
+});
+
+$('#tooltip').mouseleave( function() {
+  $('#tooltiptext').fadeOut();  
+  $('#tooltiptext').fadeOut('slow');
+ 
+});
 
 
 
+// 24.05
+// adding timestamp DONE
+// 25.05
+// adding delete button DONE
+// adding attributes to elements DONE
+// change cursor when hovers DONE
+// jako KEY mozna uzyc daty! DONE
+// dodac obsluge przez klawisze DONE
+// koniecznie znalezc sposob na kasowanie lepszy DONE
+// adding delete option DONE
+// 26.05
+// are you sure alert? DONE &FIXED
+// add info on the beginning, when hover? DONE
+// working on confirm field
+// having white cover when info text faded in doesnt work
 
-
-
-
-
+// NEXT
+// adapting the alert button! (size, position and cover)
+// dopasowywanie sie do wielkosci notki?
+// jakos ladnie umiejscowic na srodku 'more info' 
+// trim time to make it look better, change date format
+// download as pdf
+// font ladny i z internationalnymi znakami
 
 
 
