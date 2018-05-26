@@ -1,19 +1,63 @@
+/* http://www.colourlovers.com/palette/2060/Post-It */
+
 * {
   /* border: 1px black solid; */
   font-family: 'Gamja Flower', cursive; 
   font-size: 2.5vw;
 }
 
-/* body {
-  background-color: burlywood !important;
-} */
+body {
+  
+}
 
 /* font-family: 'Hi Melody', cursive;
 font-family: 'Gamja Flower', cursive;
 font-family: 'Gochi Hand', cursive; */
 
+#header {
+  text-align: center;
+  padding-top: 0;
+  margin-bottom: 0;
+}
+
+#tooltip {
+  padding-top: 0 !important;
+  /* allows center position, dont delete ;) */
+  margin: 0 auto; 
+  margin-bottom: 5px;
+  text-align: center;
+  color: grey;
+  font-size: 2vw;
+  width: 9vw;
+  height: 3vw;
+}
+
+#tooltip:hover {
+  cursor: pointer;  
+  background-color: rgba(250,250,144,0.75);
+  width: 11vw;
+  height: 3vw;
+  transition: 0.7s;
+  
+}
+
+#tooltiptext {  
+  display: none;
+  margin: 0 auto !important;   
+  position: absolute;
+  
+  /* text-align: center; */
+  z-index: 1 !important;
+  background-color: rgb(237,234,227);
+  padding: 5px;
+  width: 72vw;
+  height: 20vw;   
+}
+
+
 .App {
-  margin-top: 20px;
+  margin-top: 10px;
+  
 }
 
 .note {
@@ -21,18 +65,24 @@ font-family: 'Gochi Hand', cursive; */
   border-radius: 5px;
 }
 
+.date {
+  font-size: 1.75vw;
+}
+
+
 textarea {
   min-width: 200px;
   min-height: 180px !important;
-  text-align: center;
+  /* text-align: center; */
 }
 ::placeholder {
-  text-align: center;
+  /* text-align: center; */
+  opacity: 0.5;
   margin-top: 20px !important;
 }
 
 input {
-  font-size: 3vw;
+  font-size: 2.5vw;
 }
 
 
@@ -43,22 +93,66 @@ input {
 
 .memo{
   margin: 20px;
-  background-color: #FFFFA5;
+  /* width: 250px;
+  height: 250px; */
+  background-color: rgb(255,255,165);
+  /* http://www.colourlovers.com/color/FFFFA5/PostIt_Gelb */
   -webkit-box-shadow: 7px 9px 5px 3px rgba(130,128,130,0.37);
   -moz-box-shadow: 7px 9px 5px 3px rgba(130,128,130,0.37);
   box-shadow: 7px 9px 5px 3px rgba(130,128,130,0.37);
 }
 
-.memo:hover {
-  cursor: pointer;
-}
 
 .delBtn {
-  background-color: #FFFFA5;
+  background-color: rgb(255,255,165);
   border: none;
   text-align: right;
   font-weight: 600;
   box-shadow: 1px;
   transform: none;
-  
+  font-size: 1.75vw;
+}
+
+.delBtn:hover {
+  cursor: pointer;
+}
+
+#cover {
+ background-color: rgb(144,144,144);
+ position: absolute;
+ z-index: 1;
+}
+
+#alertMsg {
+  display: none;
+  position: relative;
+  margin: 0 auto;
+  z-index: 2;
+  /* border: 1px black solid !important; */
+  background-color: rgb(237,234,227);
+  text-align: center;
+  width: 45%;
+  height: 10%;
+  /* position: absolute; */
+}
+
+#alertMsg:hover {
+  cursor: pointer;
+}
+
+#yesBtn, #noBtn {
+  /* border: 1px black solid; */
+  width: 50%;
+  height: 25%;
+  /* position: relative;
+  margin: 0 auto; */
+}
+
+#yesBtn {
+  background-color: rgb(255,204,200);
+
+}
+
+#noBtn {
+  background-color: rgb(228,244,225);
 }
