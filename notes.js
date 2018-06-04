@@ -2,19 +2,43 @@
 
 let textToAdd;
 // introducing date of adding the note as a key for local storage data
-let inpKey = `${new Date}`;
+
+let currentDate = new Date;
+
+let inpKey = `${currentDate}`;
+let optionsForDate = { weekday: 'long', year: 'numeric', month: 'short', day: 'numeric', hour: 'numeric', minute: 'numeric' };
+
+// function to get the most preferred language in the respective browser (set in the browser's setting) to save and display date in your locale format
+// the variable 'lang' will have country code format i.e. either 'en' or 'en-EN' that will determine the format of the date in the same language. 
+// The app will be used/notes will be made most probably in the same language as the browser is used. Thus having the date in the local format will improve consistency of notes and UX in generall. 
+let lang = '';
+function getLang()
+{
+ if (navigator.languages != undefined) 
+ lang = (navigator.languages[0]).toString(); 
+ else 
+ lang = (navigator.languages).toString();
+}
+getLang();
+
+console.log(lang);
+
+let dateToDisplay = currentDate.toLocaleDateString(lang, optionsForDate);
+console.log(dateToDisplay);
 
 let addNote = function() {
    //  textToAdd will equal the input typed in the input textarea
    textToAdd = $('#input').val();
- 
+   
+  // initiating variable that will save the date and the text added, so both can be saved in the locale storage and display later, everytime the app is loaded.
+   let toBeSaved = `${dateToDisplay}<br><br>${textToAdd}`;
+
    $('#output').append(`
-     <div class='memo'>
-       <p class='date'>${new Date}</p>
-       <p class='note'>${textToAdd}</p>
+     <div class='memo'>      
+       <p class='note'>${toBeSaved}</p>
        <button class='delBtn'>Delete</button></div>`); 
    $('#input').val('');      
-   localStorage.setItem(inpKey, textToAdd);   
+   localStorage.setItem(inpKey, toBeSaved);   
    window.location.reload(); 
 }
   $('#input').keypress(function() {
@@ -31,10 +55,9 @@ $( window ).on( "load", function() {
     const key = localStorage.key(i);
     
     $('#output').append(`
-      <div class='memo'>
-        <p class='date'>${key}</p>
+      <div class='memo'>       
         <p class='note'>${localStorage.getItem(key)}</p>
-        <button class='delBtn' id='delBtn${i}'>Delete</button></div>`);
+        <button class='delBtn' id='delBtn${i}' href="#">Delete</button></div>`);
         // $('.delBtn').html(`<button class='delBtn' id='${i}'>Delete</button>`)
     $('#input').val('');
 
@@ -73,6 +96,10 @@ $('#tooltip').mouseleave( function() {
 });
 
 
+// opacity: 0;
+// transition: opacity 0.3s;
+// background-color: grey;
+// color: white;
 
 // 24.05
 // adding timestamp DONE
@@ -90,13 +117,19 @@ $('#tooltip').mouseleave( function() {
 // working on confirm field
 // having white cover when info text faded in doesnt work
 
+// 04.06
+// working on the yes-no alert popup & cover
+// dopasowywanie sie do wielkosci notki? DONE
+// trim time to make it look better, change date format DONE
+// adapting font-size of the note when hover DONE
+// detecting the most preferred browsers language DONE
+// adapting date format to the browser's language/country DONE
+// adapting the alert button! (size, position and cover) DONE
+
 // NEXT
-// adapting the alert button! (size, position and cover)
-// dopasowywanie sie do wielkosci notki?
-// jakos ladnie umiejscowic na srodku 'more info' 
-// trim time to make it look better, change date format
 // download as pdf
-// font ladny i z internationalnymi znakami
+
+
 
 
 
