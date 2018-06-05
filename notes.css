@@ -2,7 +2,7 @@
 
 * {
   /* border: 1px black solid; */
-  font-family: 'Gamja Flower', cursive; 
+  font-family: 'Arial', sans-serif;
   /* font-size: 2.5vw; */
 }
 
@@ -12,7 +12,13 @@ body {
 
 /* font-family: 'Hi Melody', cursive;
 font-family: 'Gamja Flower', cursive;
-font-family: 'Gochi Hand', cursive; */
+font-family: 'Gochi Hand', cursive;
+font-family: 'Dekko', cursive;
+font-family: 'Patrick Hand', cursive;
+font-family: 'Just Me Again Down Here', cursive;
+font-family: 'Atma', cursive;
+
+ */
 
 #header {
   text-align: center;
@@ -24,19 +30,20 @@ font-family: 'Gochi Hand', cursive; */
   padding-top: 0 !important;
   /* allows center position, dont delete ;) */
   margin: 0 auto; 
-  margin-bottom: 5px;
+  /* margin-bottom: 5px; */
   text-align: center;
   color: grey;
-  font-size: 2vw;
+  font-size: 1.5vw;
   width: 9vw;
   height: 3vw;
 }
 
 #tooltip:hover {
   cursor: pointer;  
-  background-color: rgba(250,250,144,0.75);
+  background-color: rgb(198, 252, 188);;
   width: 11vw;
   height: 3vw;
+  color: black;
   transition: 0.7s;
   
 }
@@ -44,41 +51,37 @@ font-family: 'Gochi Hand', cursive; */
 #tooltiptext {  
   display: none;
   margin: 0 auto;   
-  margin-bottom: 10px;
+  /* margin-bottom: 10px; */
   position: absolute;
-  float: right;
+  /* top:0; */
+  left:0;
+  right:0;
+  /* float: right; */
   font-size: 2vw;
-  /* text-align: center; */
+  text-align: center;
   z-index: 1 !important;
-  background-color: rgb(237,234,227);
+  background-color: rgb(198, 252, 188);
   padding: 5px;
   /* width: 72vw;
   height: 20vw;    */
+
 }
 
 
 .App {
-  margin-top: 10px;
-  
+  margin-top: 10px;  
 }
 
-.note {
-  /* border: 1px #ddd solid; */
-  border-radius: 5px;
+#header {
+  font-size: 3vw;
 }
-
-.date {
-  font-size: 1.75vw;
-  font-weight: bold;
-}
-
 
 textarea {
-  min-width: 200px;
-  min-height: 180px !important;
+  min-width: 20vw;
+  min-height: 18vw;
   border: none;
   outline:none;
-  /* text-align: center; */
+ 
   
 }
 ::placeholder {
@@ -87,8 +90,9 @@ textarea {
   margin-top: 20px !important;
 }
 
-input {
-  font-size: 4.5vw;
+#input {
+  font-size: 1.5vw;
+  font-family: 'Dekko', cursive !important;
 }
 
 
@@ -104,6 +108,7 @@ input {
   font-size: 2vw;
   opacity: 0.7;
   background-color: rgb(194, 194, 194);
+  
 }
 
 #sub-button:hover {
@@ -112,34 +117,47 @@ input {
 }
 
 .memo{
-  margin: 20px;
-  /* width: 250px;
-  height: 250px; */
+  margin: 2vw 2vw 2vw 0;
+  /* width: 20vw; */
+  /* height: 20vw; */
+  width: 30%;
+  height: 10%;
   font-size: 1.5vw;
   -webkit-transition: font-size 0.5s; /* For Safari 3.1 to 6.0 */
-  transition: font-size 0.5s;
-
+  transition: 0.5s;
+  font-family: 'Dekko', cursive !important;
+  word-wrap: break-word; 
+ 
   background-color: rgb(255,255,165);
   /* http://www.colourlovers.com/color/FFFFA5/PostIt_Gelb */
-  -webkit-box-shadow: 7px 9px 5px 3px rgba(130,128,130,0.37);
-  -moz-box-shadow: 7px 9px 5px 3px rgba(130,128,130,0.37);
-  box-shadow: 7px 9px 5px 3px rgba(130,128,130,0.37);
+ 
+  box-shadow: 0 10px 8px 0 rgba(0,0,0, 0.2), 0 10px 20px 0 rgba(0,0,0, 0.19);
 }
 
-.memo:hover {
-  font-size: 150% !important;
-  
+.memo:hover {  
+  transform: scale(1.2);
+  border: 1px solid rgba(130,128,130,0.37);
+  text-overflow: inherit;  
 }
 
+.note {
+  /* border: 1px #ddd solid; */
+  border-radius: 5px;
+  padding: 2.5px 10px 5px 10px;
+  font-family: 'Dekko', cursive !important;
+  /* margin: 0;   */
+}
 
 .delBtn {
-  background-color: rgb(255,255,165);
+  background-color: rgb(248, 248, 124, 0.75);
+  /* box-shadow: 1px 1px 3px 3px rgb(247, 247, 150); */
   border: none;
-  text-align: right;
-  
+  text-align: right;  
   box-shadow: 1px;
   transform: none;
   font-size: inherit;
+  margin: 2px 2px 2px 8px;
+  padding: 2px;
   /* -webkit-transition: font-size 0.5s; /* For Safari 3.1 to 6.0 */
 /* transition: font-size 0.5s; */
 }
@@ -154,8 +172,8 @@ input {
   display: none;
  width: 100%;
  height: 100%;
-  background-color: rgb(0, 0, 0, 0.5);
- position: absolute;
+  background-color: rgb(0, 0, 0, 0.7);
+ position: fixed;
  top: 0;
  left: 0;
  z-index: 1;
@@ -164,16 +182,17 @@ input {
 
 #alertMsg {
   /* shadow */
-  -webkit-box-shadow: 7px 9px 5px 3px rgba(130,128,130,0.37);
+  /* -webkit-box-shadow: 7px 9px 5px 3px rgba(130,128,130,0.37);
   -moz-box-shadow: 7px 9px 5px 3px rgba(130,128,130,0.37);
-  box-shadow: 7px 9px 5px 3px rgba(130,128,130,0.37);
+  box-shadow: 7px 9px 5px 3px rgba(130,128,130,0.37); */
   /* shadow */
   
   display: none; 
   position: relative;
-  margin-top: 10vw;
+  padding-top: 10px;
+  margin-top: 20%;
   z-index: 2;  
-  background-color: rgb(219, 219, 216);
+  background-color: rgb(194, 194, 193);
   text-align: center;
   width: 45%;
   height: 10%;   
@@ -186,12 +205,14 @@ input {
   margin-bottom: 2.5%;
 }
 
+
 #yesBtn, #noBtn {
   /* border: 1px black solid; */
   width: 50%;
   height: 50%;
   /* position: relative;*/
   margin: 0;  
+  padding: 0;
 }
 
 #yesBtn {
