@@ -117,7 +117,7 @@ textarea {
 }
 
 .memo{
-  margin: 2vw 2vw 2vw 0;
+  margin: 2vw 1.5vw 2vw 1vw;
   /* width: 20vw; */
   /* height: 20vw; */
   width: 30%;
@@ -132,6 +132,9 @@ textarea {
   /* http://www.colourlovers.com/color/FFFFA5/PostIt_Gelb */
  
   box-shadow: 0 10px 8px 0 rgba(0,0,0, 0.2), 0 10px 20px 0 rgba(0,0,0, 0.19);
+  
+  float: left; 
+  
 }
 
 .memo:hover {  
