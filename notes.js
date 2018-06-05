@@ -41,12 +41,24 @@ let addNote = function() {
    localStorage.setItem(inpKey, toBeSaved);   
    window.location.reload(); 
 }
+
+// $('#output').append(`
+// <div class='memo'>      
+//   <p class='note'>${toBeSaved}</p>
+//   <button class='delBtn'>Delete</button></div>`); 
+// $('#input').val('');      
+// localStorage.setItem(inpKey, toBeSaved);   
+// window.location.reload(); 
+// }
+
+
+
   $('#input').keypress(function() {
     if(event.which == 13)  addNote();   
   });
 
   $('#sub-button').click(addNote);
-
+  
 
 $( window ).on( "load", function() {
 
@@ -57,16 +69,19 @@ $( window ).on( "load", function() {
     $('#output').append(`
       <div class='memo'>       
         <p class='note'>${localStorage.getItem(key)}</p>
-        <button class='delBtn' id='delBtn${i}' href="#">Delete</button></div>`);
-        // $('.delBtn').html(`<button class='delBtn' id='${i}'>Delete</button>`)
+        <button 
+        class='delBtn' 
+        id='delBtn${i}'        
+        >Delete</button></div>`);  
     $('#input').val('');
 
+    console.log(localStorage.getItem(key).length);
 
      // triggerring alert popup before deleting a note
     $(`#delBtn${i}`).on('click', function(){
-      $('#cover').fadeIn('slow');
+      $('#cover').fadeIn('slow');      
       $('#alertMsg').fadeIn('slow');
-
+      
       // deleting a note when clicked yes
         $('#yesBtn').on('click', function() {
           localStorage.removeItem(key, localStorage.getItem(localStorage.key(i)));
@@ -96,6 +111,7 @@ $('#tooltip').mouseleave( function() {
 });
 
 
+
 // opacity: 0;
 // transition: opacity 0.3s;
 // background-color: grey;
@@ -118,17 +134,36 @@ $('#tooltip').mouseleave( function() {
 // having white cover when info text faded in doesnt work
 
 // 04.06
-// working on the yes-no alert popup & cover
+// working on the yes-no alert popup & cover DONE
 // dopasowywanie sie do wielkosci notki? DONE
 // trim time to make it look better, change date format DONE
 // adapting font-size of the note when hover DONE
 // detecting the most preferred browsers language DONE
 // adapting date format to the browser's language/country DONE
 // adapting the alert button! (size, position and cover) DONE
+// size of the cover DONE
+// more info in the middle DONE
+// font ladny i z internationalnymi znakami DONE
+// this weird effect when start typing in the text area DONE
+// when fixed the more info, change the background color? DONE
 
-// NEXT
+// 05.06
+// two different fonts for instruction and notes DONE
+// text wrapping DONE
+// square notes DONE
+// transform/scale when hover on the note DONE
+// Adjusting the size of the element when the text 'too long'. DONE by using % or width and height  
+// working on the placement of the Del button DONE by setting width and height of the memo with %, so delete button went down
+// and adjusting the margin-top of the Delete button when different lenght of the text DONE
+// box shadow effect, so it looks like sticked post it DONE
+// header font size adapted DONE
+
+// TO BE DONE
+// notes side by side
 // download as pdf
-
+// drag and drop for notes and remembering the position of the notes after refresh?
+// changing colors for pink, green, blue and yellow?
+// edit button?
 
 
 
