@@ -22,8 +22,11 @@
       <div class='container' id="tooltiptext">
             Type your note in the input area and submit it by pressing 'Enter' or clicking 'Save'.<br>
             It will be kept in your browser's local storage,<br>
-            so you can close this window, turn off your device etc.<br>
-            All notes will stay there until you get rid of them, by clicking 'Delete'.
+            so you can close this window, turn off your device etc.<br><br>
+            All notes will stay there until you get rid one of them, by clicking 'Delete'<br> 
+            on the respective note or 'Delete All' button to clear all of them at once.<br><br>
+            The app will recognize the language you set in your browser and<br>
+            will save the date in the format in your preferred language.
       </div>   
            
         
@@ -33,6 +36,7 @@
         "Type your note here ..."
         ></textarea>
         <button id="sub-button" type="submit" value="Submit">Save</button>
+        <button id="delAll" value="">Delete All</button>
       </div>
 
       <div class="container" id="output">
@@ -51,16 +55,20 @@
           <p id="noBtn" class="col-sm-6">No</p>  
         </div>      
       </div>
+
+      <div class='container' id='alertMsg2'>
+        <!-- <p id='close'>&times;</p> -->
+        <h5 id='question2'>Delete <span style='font-weight: bold'>all</span> notes?</h5>
+        
+        
+        <div class='row' id='options'>
+          <p id="yesBtn2" class="col-sm-6">Yes</p>
+          <p id="noBtn2" class="col-sm-6">No</p>  
+        </div>      
+      </div>
     </div>
 
     </div>
-
-
-<!--     <div id= "addInfo">
-      <p>this app is still in progress... </p>
-      <p><img src="bar.png"/></p>
-  </div> -->
-  
 
   <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
 
@@ -77,9 +85,4 @@
   
 </body>
 </html>
-
-
-
-
-
 
