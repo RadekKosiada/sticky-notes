@@ -40,7 +40,7 @@ font-family: 'Atma', cursive;
 
 #tooltip:hover {
   cursor: pointer;  
-  background-color: rgb(198, 252, 188);;
+  background-color: rgb(196, 249, 141);
   width: 11vw;
   height: 3vw;
   color: black;
@@ -60,13 +60,12 @@ font-family: 'Atma', cursive;
   font-size: 2vw;
   text-align: center;
   z-index: 1 !important;
-  background-color: rgb(198, 252, 188);
+  background-color: rgb(196, 249, 141);
   padding: 5px;
   /* width: 72vw;
   height: 20vw;    */
 
 }
-
 
 .App {
   margin-top: 10px;  
@@ -80,10 +79,9 @@ textarea {
   min-width: 20vw;
   min-height: 18vw;
   border: none;
-  outline:none;
- 
-  
+  outline:none; 
 }
+
 ::placeholder {
   /* text-align: center; */
   opacity: 0.5;
@@ -102,29 +100,43 @@ textarea {
   }
 
 #sub-button {
-  border: none;
+  /* border: none; */
+  border: 1px solid rgb(182, 247, 172);
   cursor: pointer;
   outline:none;
   font-size: 2vw;
   opacity: 0.7;
-  background-color: rgb(194, 194, 194);
-  
+  background-color: rgb(196, 249, 141);  
 }
-
 #sub-button:hover {
   opacity: 1;
   transition: opacity 0.5s;
 }
 
+#delAll{
+  border: none;
+  cursor: pointer;
+  outline:none;
+  float: right;
+  font-size: 2vw;
+  opacity: 0.7;
+  background-color: rgb(252, 168, 212); ;
+}
+
+#delAll:hover {
+  opacity: 1;
+  transition: opacity 0.5s;
+}
+
 .memo{
-  margin: 2vw 1.5vw 2vw 1vw;
+  margin: 1.5vw 1vw 1vw 1vw;
   /* width: 20vw; */
   /* height: 20vw; */
-  width: 30%;
+  width: 29%;
   height: 10%;
   font-size: 1.5vw;
-  -webkit-transition: font-size 0.5s; /* For Safari 3.1 to 6.0 */
-  transition: 0.5s;
+  -webkit-transition: font-size 0.35s; /* For Safari 3.1 to 6.0 */
+  transition: 0.35s;
   font-family: 'Dekko', cursive !important;
   word-wrap: break-word; 
  
@@ -132,9 +144,8 @@ textarea {
   /* http://www.colourlovers.com/color/FFFFA5/PostIt_Gelb */
  
   box-shadow: 0 10px 8px 0 rgba(0,0,0, 0.2), 0 10px 20px 0 rgba(0,0,0, 0.19);
-  
+
   float: left; 
-  
 }
 
 .memo:hover {  
@@ -159,8 +170,10 @@ textarea {
   box-shadow: 1px;
   transform: none;
   font-size: inherit;
-  margin: 2px 2px 2px 8px;
+  margin: 2px 2px 0.5vw 8px;
   padding: 2px;
+  float: left;
+  /* border: 1px black solid; */
   /* -webkit-transition: font-size 0.5s; /* For Safari 3.1 to 6.0 */
 /* transition: font-size 0.5s; */
 }
@@ -183,7 +196,7 @@ textarea {
  
 }
 
-#alertMsg {
+#alertMsg, #alertMsg2 {
   /* shadow */
   /* -webkit-box-shadow: 7px 9px 5px 3px rgba(130,128,130,0.37);
   -moz-box-shadow: 7px 9px 5px 3px rgba(130,128,130,0.37);
@@ -193,47 +206,45 @@ textarea {
   display: none; 
   position: relative;
   padding-top: 10px;
+  padding-bottom: 0;
   margin-top: 20%;
   z-index: 2;  
   background-color: rgb(194, 194, 193);
   text-align: center;
   width: 45%;
-  height: 10%;   
+  height: 6%;   
 }
 
-#question {
+#question, #question2 {
   height: 50%;
   padding: 0;
   margin: 0;
-  margin-bottom: 2.5%;
+  margin-top: 0.5%;
+  margin-bottom: 2%;
 }
 
 
-#yesBtn, #noBtn {
+#yesBtn, #noBtn, #yesBtn2, #noBtn2, {
   /* border: 1px black solid; */
   width: 50%;
   height: 50%;
-  /* position: relative;*/
-  margin: 0;  
+  position: relative;
+  top:0;
+  margin-bottom: 0;  
   padding: 0;
 }
 
-#yesBtn {
-  background-color: rgb(250, 177, 171); 
+#yesBtn, #yesBtn2 {
+  background-color: rgb(252, 168, 212);  
 }
 
-#yesBtn:hover {
-  cursor: pointer;
-  background-color: rgb(250, 160, 152);  
-  
+
+
+#noBtn, #noBtn2 {
+  background-color: rgb(196, 249, 141);   
 }
 
-#noBtn {
-  background-color: rgb(198, 252, 188); 
+#yesBtn:hover, #noBtn:hover, #yesBtn2:hover, #noBtn2:hover  {
+  cursor: pointer;    
+  box-shadow: inset 0 0 0 50px rgba(0, 0, 0, 0.2);
 }
-
-#noBtn:hover {
-  cursor: pointer;
-  background-color: rgb(168, 247, 155);   
-}
-
