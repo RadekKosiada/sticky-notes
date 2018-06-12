@@ -97,6 +97,7 @@ $( window ).on( "load", function() {
         $('#noBtn').on('click', function() {
           $('#cover').fadeOut('slow');
           $('#alertMsg').fadeOut('slow');
+          window.location.reload();
         });
     });
 
