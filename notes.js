@@ -18,7 +18,7 @@ let ctrlYellow = true;
 let currentDate = new Date;
 
 let inpKey = `${currentDate}`;
-let optionsForDate = { weekday: 'long', year: 'numeric', month: 'short', day: 'numeric', hour: 'numeric', minute: 'numeric' };
+let optionsForDate = { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric', hour: 'numeric', minute: 'numeric' };
 
 // function to get the most preferred language in the respective browser (set in the browser's setting) to save and display date in your locale format
 // the variable 'lang' will have country code format i.e. either 'en' or 'en-EN' that will determine the format of the date in the same language. 
