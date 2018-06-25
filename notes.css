@@ -154,6 +154,11 @@ textarea {
   text-overflow: inherit;  
 }
 
+.date {
+  font-family: 'Dekko', cursive !important;
+  padding: 5px 10px 0 10px;
+}
+
 .note {
   /* border: 1px #ddd solid; */
   border-radius: 5px;
@@ -162,23 +167,25 @@ textarea {
   /* margin: 0;   */
 }
 
-.delBtn {
-  background-color: rgb(248, 248, 124, 0.75);
-  /* box-shadow: 1px 1px 3px 3px rgb(247, 247, 150); */
+.delBtn, .editBtn {
+  /* background-color: rgb(248, 248, 124, 0.75);*/
+  box-shadow: 0px 0px 1px 1px rgba(51, 51, 51, 0.5);
   border: none;
+  /* border-radius: 5px; */
   text-align: right;  
   box-shadow: 1px;
   transform: none;
-  font-size: inherit;
-  margin: 2px 2px 0.5vw 8px;
-  padding: 2px;
+  font-size: 1.25vw;
+  margin: 2px 2px 5px 8px;
+  padding: 1px 4px;
   float: left;
+  box-shadow: inset 0 0 0 50px rgba(51, 51, 51, 0.15);
   /* border: 1px black solid; */
   /* -webkit-transition: font-size 0.5s; /* For Safari 3.1 to 6.0 */
 /* transition: font-size 0.5s; */
 }
 
-.delBtn:hover {
+.delBtn:hover, .editBtn:hover {
   cursor: pointer;
   /* font-size: 2.25vw; */
   font-weight: 600;
@@ -196,7 +203,7 @@ textarea {
  
 }
 
-#alertMsg, #alertMsg2 {
+#alertMsg, #alertMsg2, #alertMsg3 {
   /* shadow */
   /* -webkit-box-shadow: 7px 9px 5px 3px rgba(130,128,130,0.37);
   -moz-box-shadow: 7px 9px 5px 3px rgba(130,128,130,0.37);
@@ -215,7 +222,12 @@ textarea {
   height: 6%;   
 }
 
-#question, #question2 {
+#alertMsg3 {
+  background-color: rgb(194, 194, 193);
+}
+
+
+#question, #question2, editField {
   height: 50%;
   padding: 0;
   margin: 0;
@@ -223,8 +235,7 @@ textarea {
   margin-bottom: 2%;
 }
 
-
-#yesBtn, #noBtn, #yesBtn2, #noBtn2, {
+#yesBtn, #noBtn, #yesBtn2, #noBtn2, #cancelEdit, #saveEdit {
   /* border: 1px black solid; */
   width: 50%;
   height: 50%;
@@ -234,17 +245,52 @@ textarea {
   padding: 0;
 }
 
-#yesBtn, #yesBtn2 {
+#yesBtn, #yesBtn2, #cancelEdit {
   background-color: rgb(252, 168, 212);  
 }
 
-
-
-#noBtn, #noBtn2 {
+#noBtn, #noBtn2, #saveEdit {
   background-color: rgb(196, 249, 141);   
 }
 
-#yesBtn:hover, #noBtn:hover, #yesBtn2:hover, #noBtn2:hover  {
+#yesBtn:hover, #noBtn:hover, #yesBtn2:hover, #noBtn2:hover, #cancelEdit:hover, #saveEdit:hover  {
   cursor: pointer;    
   box-shadow: inset 0 0 0 50px rgba(0, 0, 0, 0.2);
+}
+
+
+
+.pink, .green, .blue, .yellow {
+  float: right;  
+  width: 1.25vw;
+  height: 1.25vw;
+  /* margin-right: 1vw;  
+  margin-top: 0.75vw;
+  margin-bottom: 0.5vw; */
+  margin: 0.5vw;
+  /* opacity: 0.5; */
+}
+
+.pink:hover, .green:hover, .blue:hover, .yellow:hover {
+  opacity: 1;
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+.yellow {
+  background-color: rgb(255,255,165);
+  /* border: 1px solid black; */
+}
+
+.pink {
+  background-color: rgb(252, 168, 212);  
+  /* (242, 117, 173) */
+}
+
+.green {
+  background-color: rgb(196, 249, 141);
+}
+
+.blue {
+  background-color: rgb(34, 190, 230);
 }
