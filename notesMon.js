@@ -1,5 +1,3 @@
-
-
 let textToAdd;
 let color;
 
@@ -66,18 +64,21 @@ console.log(dateToDisplay);
   // initiating variable that will save the date and the text added, so both can be saved in the locale storage and display later, everytime the app is loaded.
   //  let toBeSaved = `${dateToDisplay}<br><br>${textToAdd}`;
 
+  //text to be displayed between clicking Save and refresh of the page
   $('#output').html('<h1>Adding your note...</h1>'); 
   $('#output').css('text-align', 'center');
-   $('#input').val('');      
+   $('#input').val('');   
+   //saving the note   
    localStorage.setItem(noteObj.id, myNote);   
    window.location.reload(); 
 }
 
-// adding note when clicked 'Enter';
+//calling/triggering the function addNote
+// when clicked 'Enter';
   $('#input').keypress(function() {
     if(event.which == 13)  addNote();   
   });
-// adding note when clicked 'Submit';
+// when clicked 'Submit';
   $('#sub-button').click(addNote);
   
 // function that will display all the notes after refresh, that is triggered after saving each new note.
@@ -85,10 +86,16 @@ $( window ).on("load", function() {
 
   for (let i=0; i < localStorage.length; i++) {
 // here the key that is saved to the localStorage and has a key of 'new Date' will be assigned to variable 'key';
-    
+     
     let keyXX = localStorage.key(i);
     let item = localStorage.getItem(localStorage.key(i));   
 // console.log(localStorage.getItem(localStorage.key(i)));
+
+    //the variable that will be needed later for changing the color and text of the note
+    //it will equal our saved item to object, to handle saved data easier 
+    let itemToObj =JSON.parse(localStorage.getItem(localStorage.key(i)));
+    //the variable that will be needed later. it will equal our object changed back int string to save into our local storage;
+    let itemToString= JSON.stringify(itemToObj);
 
     let noteToDisplay =JSON.parse(item);
     // console.log(typeof item);
@@ -126,30 +133,7 @@ $( window ).on("load", function() {
           
         });
     });
-
-    function updateNote () {
-      console.log('edit clicked');
-      $('#cover').fadeIn('slow');
-      $('#alertMsg3').fadeIn('slow');
-      let textToEdit = $(`memo${i}`).val();
-      console.log(`memo${i}`);
-      console.log(textToEdit);
-
-
-      $('#saveEdit').on('click', function() {
-        // localStorage.removeItem(keyXX, item);
-        // window.location.reload(); 
-      });
-
-      $('#cancelEdit').on('click', function() {
-        $('#cover').fadeOut('slow');
-        $('#alertMsg3').fadeOut('slow');
-        
-      });
-    };
-  
-    $(`#editBtn${i}`).on('click', updateNote);
-
+    
     // find the key; go to the local storage with the key and pull out the item on its own; JSONstringify it to the object and change the object and save it as a string; color will be saved as an object, but then triggered in html from the object.
     // $(`#pink${i}`).on('click', function () {       
     //   itemToObj =JSON.parse(localStorage.getItem(localStorage.key(i)));      
@@ -164,24 +148,47 @@ $( window ).on("load", function() {
     // }); 
     // this function would need to be repeeated for each color, instead of that, I am using updateBackgroundColor(); 
   
+  //UPDATING THE COLOR
   function updateBackgroundColor(event) {
     let target = event.target;    
-    itemToObj =JSON.parse(localStorage.getItem(localStorage.key(i)));      
+    // itemToObj =JSON.parse(localStorage.getItem(localStorage.key(i)));      
       itemToObj.color ={pink: pink, green: green, blue: blue, yellow: yellow}[target.className];  
-      itemToString= JSON.stringify(itemToObj);      
+      let itemToString= JSON.stringify(itemToObj);      
       localStorage.setItem(localStorage.key(i), itemToString);
+      console.log(itemToString);
       window.location.reload();
-
       // if (itemToObj.color == green) {
       //   $(`.green`).css('display', 'none');
       // }
   }
-
   $(`#yellow${i}`).on('click', updateBackgroundColor);
   $(`#blue${i}`).on('click', updateBackgroundColor);
   $(`#green${i}`).on('click', updateBackgroundColor);
   $(`#pink${i}`).on('click', updateBackgroundColor);
 
+  //UPDATING THE TEXT 
+  function updateNote () {   
+    $('#cover').fadeIn('slow');
+    $('#alertMsg3').fadeIn('slow');
+    $('#editInput').text(`${itemToObj.text}`);   
+    console.log($('#editInput').val());
+    
+    $('#saveEdit').on('click', function() {       
+      let editedText = $('#editInput').val();
+      itemToObj.text=editedText;
+      let itemToString = JSON.stringify(itemToObj);
+      localStorage.setItem(localStorage.key(i), itemToString);  
+      window.location.reload();
+    });
+
+    $('#cancelEdit').on('click', function() {       
+      $('#cover').fadeOut('slow');
+      $('#alertMsg3').fadeOut('slow');
+        
+      
+    });
+  };
+$(`#editBtn${i}`).on('click', updateNote);
   
   };
 });
@@ -282,6 +289,11 @@ $('#delAll').on('click', function () {
 // minor fixes
 // clear all Button localStorage.clear(); DONE
 
+//17.06
+// editing DONE
+//18.06
+//drag and drop? x and y position?
+
 
 // download as pdf
 // drag and drop for notes and remembering the position of the notes after refresh?
@@ -291,17 +303,4 @@ $('#delAll').on('click', function () {
 
 
 // ze notki sie wykrzywiaja na boki
-
-
-
-// rozne kolory?
-// dodac ze te karteczki sa troche krzywo
-
-
-
-
-// it will stay as long as the browser allows. 
-
-
-
 
