@@ -75,8 +75,8 @@ font-family: 'Atma', cursive;
   font-size: 3vw;
 }
 
-textarea {
-  min-width: 20vw;
+#input {
+  min-width: 30vw;
   min-height: 18vw;
   border: none;
   outline:none; 
@@ -146,6 +146,7 @@ textarea {
   box-shadow: 0 10px 8px 0 rgba(0,0,0, 0.2), 0 10px 20px 0 rgba(0,0,0, 0.19);
 
   float: left; 
+  
 }
 
 .memo:hover {  
@@ -155,7 +156,7 @@ textarea {
 }
 
 .date {
-  font-family: 'Dekko', cursive !important;
+  font-family: 'Dekko', cursive;
   padding: 5px 10px 0 10px;
 }
 
@@ -165,6 +166,7 @@ textarea {
   padding: 2.5px 10px 5px 10px;
   font-family: 'Dekko', cursive !important;
   /* margin: 0;   */
+  
 }
 
 .delBtn, .editBtn {
@@ -203,36 +205,44 @@ textarea {
  
 }
 
-#alertMsg, #alertMsg2, #alertMsg3 {
-  /* shadow */
-  /* -webkit-box-shadow: 7px 9px 5px 3px rgba(130,128,130,0.37);
-  -moz-box-shadow: 7px 9px 5px 3px rgba(130,128,130,0.37);
-  box-shadow: 7px 9px 5px 3px rgba(130,128,130,0.37); */
-  /* shadow */
-  
-  display: none; 
-  position: relative;
-  padding-top: 10px;
-  padding-bottom: 0;
-  margin-top: 20%;
-  z-index: 2;  
+#alertMsg, #alertMsg2 {  
   background-color: rgb(194, 194, 193);
   text-align: center;
-  width: 45%;
-  height: 6%;   
+  margin-top: 15%;
+  display: none; 
+  position: relative;
+  width: 55%; 
 }
 
 #alertMsg3 {
   background-color: rgb(194, 194, 193);
+  text-align: center;
+  margin-top: 10%;
+  display: none; 
+  position: relative;
+  width: 95%;
+  
+  }
+
+#editInput {
+ width: 100%;
+ height: 100px;
+ margin: 0 auto;  
+ font-family: 'Dekko', cursive;
+ text-align: center;
 }
 
+#editInstruction {
+  padding-top:10px;
+}
 
-#question, #question2, editField {
-  height: 50%;
-  padding: 0;
+#question, #question2 {
+  height: 10%;
+  padding: 10px;
   margin: 0;
-  margin-top: 0.5%;
-  margin-bottom: 2%;
+  /* margin-top: 0.5%; */
+  /* margin-bottom: 2%; */
+  position: relative;
 }
 
 #yesBtn, #noBtn, #yesBtn2, #noBtn2, #cancelEdit, #saveEdit {
@@ -242,7 +252,7 @@ textarea {
   position: relative;
   top:0;
   margin-bottom: 0;  
-  padding: 0;
+  margin-top: 5px;
 }
 
 #yesBtn, #yesBtn2, #cancelEdit {
